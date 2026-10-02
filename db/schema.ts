@@ -1,0 +1,25 @@
+import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+
+export const applications = sqliteTable('applications', {
+  id: text('id').primaryKey(),
+  createdAt: integer('created_at').notNull(),
+  fullName: text('full_name').notNull(),
+  matricNumber: text('matric_number').notNull(),
+  icNumber: text('ic_number'),
+  phoneNumber: text('phone_number').notNull(),
+  personalEmail: text('personal_email').notNull(),
+  siswaEmail: text('siswa_email').notNull(),
+  studyDepartment: text('study_department').notNull(),
+  yearOfStudy: text('year_of_study').notNull(),
+  gender: text('gender'),
+  firstChoice: text('first_choice').notNull(),
+  secondChoice: text('second_choice'),
+  commitments: text('commitments').notNull(),
+  answersJson: text('answers_json').notNull(),
+  cvKey: text('cv_key'),
+  cvFileName: text('cv_file_name'),
+  videoKey: text('video_key'),
+  videoFileName: text('video_file_name'),
+  videoLink: text('video_link'),
+  status: text('status').notNull().default('new'),
+});
